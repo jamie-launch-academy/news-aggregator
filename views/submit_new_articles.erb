@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+
+<h1>Slacker News</h1>
+
+
+<% if @error_messages %>
+<ul>
+  <% @error_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<div>
+  <form method="post" action="/articles">
+
+    <div>
+      <label for ="title">Title:</label>
+      <input type="text" id="title" name="article[title]" value=<%= @title %>>
+    </div>
+
+    <div>
+      <label for ="description"> Description:</label>
+      <input type="text" id="description" name="article[description]" value=<%= @description %>>
+    </div>
+
+    <div>
+      <label for ="url"> Url:</label>
+      <input type="text" id="url" name="article[url]" value=<%= @url %>>
+    </div>
+
+    <div>
+      <input type="submit" value="Submit Article">
+    </div>
+  </form>
+</div>

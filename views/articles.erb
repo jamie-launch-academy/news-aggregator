@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Slacker News</h1>
+
+<h3>Articles List</h3>
+
+<a href= "/articles/new">Submit New!</a>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= "Article: #{article[:title]} -- " %>
+      <%= "Description: #{article[:description]} -- " %>
+      <%= "URL:" %>
+      <a target="_blank" href=<%= "https://#{article[:url]}"%>><%="#{article[:url]}"%></a>
+    </li>
+  <% end %>
+</ul>
+
+
+
+</body>
+</html>
